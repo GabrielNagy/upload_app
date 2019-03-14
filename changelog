@@ -1,0 +1,50 @@
+* upload_app3.tar.gz
+- change login from user to email (easier to remember)
+- advise users to choose their username in FirstName_LastName format for
+better handling
+- add export button to get csv rankings (have to be admin: manually create
+"admin" field in couchdb User then relogin)
+- change by_total view to include email (works only on fresh uploads)
+- startup script to fix dependency problems between containers
+- publish 5984 on localhost only
+- pip freeze > requirements.txt in container
+- install compilers (pascal)
+- nginx placeholder, tests  to be done on http://staging.itec.nokia-romania-garage.ro/
+- more export options: full users/problems including sources
+  - Export button for rankings
+  - separate button to export sources (manipulate using python)
+- install compilers (java)
+- add images with problems on platform
+
+TODO:
+- change username to "full name"
+- backup couchdb every 10 mins (cron job)
+- use case description
+  - register / login
+  - upload source, test
+  - view rankings (specific for elev/student, all for admin)
+  - export rankings (csv) and sources (zip)
+  - admin user enable/disable
+  - placeholders:
+    - countdown before contest start
+    - disable rankings during last x minutes
+    - disable platform after finish - https://httpstatusdogs.com/
+
+- web editor
+
+WISHLIST - iTec 2018
+
+b: cand expira timerul in javascript, apare expired dar in python inca face redirectarea
+e: cand expira timerul sa faca automat reload la pagina
+e: editor in pagina web
+e: admin management
+e: problems management (add/remove zip)
+e: adaugat countdown timer in platforma
+b: https functional, but not enforced
+s: check if gunicorn still needed if we have -flask- nginx?
+e: history
+e: timpul de executie ar trebui minimul din n executii, nu media
+b: clasament probleme nu e consistent cu clasament general (general e ok)
+e: lasat doar c/cpp daca se ia in considerare durata; java merge mai greu by default, python la fel
+e: sa apara executia/status doar la pb selectata
+

@@ -1,0 +1,12 @@
+.result {
+    font-family: 'Verdana';
+}
+
+body {
+    background-color: #005678;
+    margin-top: 30px;
+}
+
+td, th {
+    text-align: center;
+}

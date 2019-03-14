@@ -1,0 +1,24 @@
+# editor junk
+*~
+\#*#
+*.swp
+
+# python + virtualenv
+*.pyc
+.Python
+[Bb]in
+[Bb]uild
+[Dd]ist
+*.egg-info
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+[Ss]hare
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
+# mac junk
+.DS_Store

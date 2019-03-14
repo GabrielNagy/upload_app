@@ -1,0 +1,2 @@
+graft upload_app/templates
+graft upload_app/static

@@ -1,0 +1,30 @@
+* platform
+** start app see if it is working (venv) (1)
+** celery :NEXT:
+*** run problem
+** move to docker
+*** add import/export for databases?
+*** data cleanup
+* describe/review existing usecases (1) :NEXT:
+** create account (student/elev)
+** login
+** upload source files (select language&problem&student/elev) - TBU
+** run problem (include rezultatele + ranking calculation(both problem & total)) - TBU
+** admin -> see all ranking
+
+* new usecases
+** + ?? redesign UI focus on problem?? + editor (codemirror)
+** + admin -> export ranking
+** + admin -> export problems
+** + run problem (keep history + results)
+** + run problem (recover older version from history)
+
+* feature
+** add export capabilities(csv)
+
+* OP
+** Supported languages
+** Algoritm ranking
+
+* small tasks [0/1]
+  - [ ] db config default to localhost and use env for docker

@@ -1,0 +1,52 @@
+version: "3"
+services:
+  couchdb-node:
+    image: couchdb:2.2.0
+    environment:
+      - NODENAME=couchdb-node
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 1024
+    ports:
+      - "127.0.0.1:5984:5984"
+    volumes:
+      - /docker_volumes/couchdb_data:/opt/couchdb/data
+  redis-node:
+    image: redis:5.0.0-stretch
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - /docker_volumes/redis_data:/data
+
+  app:
+    volumes:
+     - ./app:/app
+     - /docker_volumes/static_uploads:/app/upload_app/static/uploads/
+    build: .
+    ports:
+      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8085:5000"
+      - "127.0.0.1:8000:8000"
+    image: upload_app
+    command: ["/app/run.sh"]
+
+  nginx:
+    build: nginx
+    image: nginx
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+      - /docker_volumes/nginx_html:/usr/share/nginx/html
+
+  celery:
+    volumes:
+     - ./app:/app
+     - /docker_volumes/static_uploads:/app/upload_app/static/uploads/
+    build: .
+    image: upload_app
+    command: "celery worker -A upload_app.upload_app.celery --loglevel=info"
+
