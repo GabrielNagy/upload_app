@@ -1,5 +1,5 @@
 couchdbkit==0.6.5
-celery==4.2.1
+celery==5.2.2
 Flask==1.0.2
 Flask-Bcrypt==0.7.1
 Flask-Bootstrap==3.3.7.1
